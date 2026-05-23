@@ -43,7 +43,8 @@ src="https://www.facebook.com/tr?id=1599265507806732&ev=PageView&noscript=1"
   --green-bg:#F0F7F0;
 }
 html{scroll-behavior:smooth;scroll-padding-top:80px}
-body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;font-size:16px;font-weight:400;line-height:1.6;overflow-x:hidden}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans','Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif;font-size:16px;font-weight:400;line-height:1.6;overflow-x:hidden}
+html[lang="ko"] h1,html[lang="ko"] h2,html[lang="ko"] h3,html[lang="ko"] .step-label,html[lang="ko"] .faq-item summary,html[lang="ko"] .glow-bridge h3{font-family:'Cormorant Garamond','Apple SD Gothic Neo','Nanum Myeongjo',serif;letter-spacing:-.01em}
 
 /* ── FOCUS ── */
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
@@ -68,6 +69,10 @@ nav{position:fixed;top:2px;left:0;right:0;z-index:200;padding:20px 52px;display:
 .logo{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:400;letter-spacing:.22em;color:var(--gold);text-transform:uppercase}
 .btn-outline{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border:1.5px solid var(--gold);padding:13px 24px;text-decoration:none;transition:all .25s;font-weight:500;display:inline-flex;align-items:center;min-height:44px}
 .btn-outline:hover{background:var(--gold);color:var(--white)}
+.nav-right{display:flex;align-items:center;gap:10px}
+.lang-toggle{background:transparent;border:none;color:var(--muted);font-family:'DM Sans','Apple SD Gothic Neo',sans-serif;font-size:14px;font-weight:600;letter-spacing:.04em;min-width:44px;min-height:44px;padding:8px 10px;line-height:1;transition:color .2s ease;border-radius:4px}
+.lang-toggle:hover{color:var(--gold)}
+.lang-toggle:active{transform:scale(.94)}
 
 /* ── HERO ── */
 .hero{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;justify-content:center;padding:130px 52px 100px;position:relative;background:var(--bg);border-bottom:1px solid var(--border)}
@@ -238,7 +243,10 @@ footer{padding:36px 52px;border-top:1px solid var(--border);display:grid;grid-te
 
 /* ── MOBILE ── */
 @media(max-width:900px){
-  nav{padding:16px 20px}
+  nav{padding:12px 16px}
+  .nav-right{gap:4px}
+  .lang-toggle{font-size:13px;padding:8px 6px;min-width:38px}
+  .btn-outline{padding:11px 16px;font-size:11px;letter-spacing:.1em}
   .hero{padding:104px 20px 72px;min-height:auto}
   h1{font-size:clamp(44px,11vw,68px)}
   .trust-badge{margin-top:18px;font-size:12.5px}
@@ -277,96 +285,99 @@ footer{padding:36px 52px;border-top:1px solid var(--border);display:grid;grid-te
 <!-- NAV -->
 <nav>
   <div class="logo">Mend</div>
-  <a href="#check" class="btn-outline">Check Availability</a>
+  <div class="nav-right">
+    <button type="button" class="lang-toggle" id="lang-toggle" aria-label="Switch to Korean" aria-pressed="false">한</button>
+    <a href="#check" class="btn-outline" data-i18n="nav.cta">Check Availability</a>
+  </div>
 </nav>
 
 <!-- 1 · HERO -->
 <section class="hero" id="hero">
   <div class="hero-bg"></div>
-  <div class="eyebrow">HCMC · Hanoi · Da Nang · Available Now</div>
-  <h1>A world-class<br>massage, <em>at your<br>door tonight.</em></h1>
-  <p class="trust-badge">From ₫250,000 · No hidden fees · Transparent pricing</p>
+  <div class="eyebrow" data-i18n="hero.eyebrow">HCMC · Hanoi · Da Nang · Available Now</div>
+  <h1 data-i18n-html="hero.h1">A world-class<br>massage, <em>at your<br>door tonight.</em></h1>
+  <p class="trust-badge" data-i18n="hero.trust">From ₫250,000 · No hidden fees · Transparent pricing</p>
   <ul class="hero-promises" aria-label="Mend promises">
     <li>
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-      <span>You don't pay if you're not satisfied</span>
+      <span data-i18n="hero.promise1">You don't pay if you're not satisfied</span>
     </li>
     <li>
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 4 13c0-6 7-11 7-11s7 5 7 11a7 7 0 0 1-7 7z"/><path d="M11 20v-7"/></svg>
-      <span>Premium oils, made locally in Vietnam</span>
+      <span data-i18n="hero.promise2">Premium oils, made locally in Vietnam</span>
     </li>
   </ul>
-  <p class="hero-p">Tell us where you are. A vetted therapist will be at your door in under 60 minutes.</p>
+  <p class="hero-p" data-i18n="hero.sub">Tell us where you are. A vetted therapist will be at your door in under 60 minutes.</p>
   <div class="hero-act">
-    <a href="#check" class="btn-gold">Check My Area — Free &amp; Instant</a>
+    <a href="#check" class="btn-gold" data-i18n="hero.cta">Check My Area — Free &amp; Instant</a>
     <div class="hero-proof">
-      <span class="stars">★★★★★</span>
-      <span>10,000+ guests across Vietnam</span>
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <span data-i18n="hero.proof">10,000+ guests across Vietnam</span>
     </div>
   </div>
 </section>
 
 <!-- 2 · HOW IT WORKS -->
 <section class="sec how-it-works">
-  <div class="sec-label">How It Works</div>
-  <h2 class="sh">Three taps <em>to relax.</em></h2>
+  <div class="sec-label" data-i18n="how.label">How It Works</div>
+  <h2 class="sh" data-i18n-html="how.h2">Three taps <em>to relax.</em></h2>
   <div class="steps reveal">
     <div class="step">
       <span class="step-num">01</span>
-      <p class="step-label">Tell us your area</p>
+      <p class="step-label" data-i18n="how.step1">Tell us your area</p>
     </div>
     <div class="step">
       <span class="step-num">02</span>
-      <p class="step-label">Pick your therapist</p>
+      <p class="step-label" data-i18n="how.step2">Pick your therapist</p>
     </div>
     <div class="step">
       <span class="step-num">03</span>
-      <p class="step-label">Open your door</p>
+      <p class="step-label" data-i18n="how.step3">Open your door</p>
     </div>
   </div>
 </section>
 
 <!-- 3 · COMPARISON -->
 <section class="why-mend sec">
-  <div class="sec-label">Why Mend</div>
-  <h2 class="sh">Skip the search. <em>Skip the gamble.</em></h2>
+  <div class="sec-label" data-i18n="why.label">Why Mend</div>
+  <h2 class="sh" data-i18n-html="why.h2">Skip the search. <em>Skip the gamble.</em></h2>
   <div class="comparison reveal">
     <div class="comp-card comp-old">
-      <p class="comp-label">The old way</p>
+      <p class="comp-label" data-i18n="why.oldLabel">The old way</p>
       <p class="comp-price">~600K <small>VND</small></p>
       <ul>
         <li>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(28,24,20,.35)" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
-          <span>30–45 min Grab ride each way</span>
+          <span data-i18n="why.old1">30–45 min Grab ride each way</span>
         </li>
         <li>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(28,24,20,.35)" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
-          <span>Can't vet the therapist beforehand</span>
+          <span data-i18n="why.old2">Can't vet the therapist beforehand</span>
         </li>
         <li>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(28,24,20,.35)" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
-          <span>24hr advance booking required</span>
+          <span data-i18n="why.old3">24hr advance booking required</span>
         </li>
       </ul>
     </div>
     <div class="comp-card comp-mend">
-      <p class="comp-label">Recommended</p>
-      <p class="comp-price">from 250K <small>VND</small></p>
+      <p class="comp-label" data-i18n="why.mendLabel">Recommended</p>
+      <p class="comp-price" data-i18n-html="why.mendPrice">from 250K <small>VND</small></p>
       <ul>
         <li>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8924A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 12 10 18 20 6"/></svg>
-          Therapist at your door in under 60 min
+          <span data-i18n="why.mend1">Therapist at your door in under 60 min</span>
         </li>
         <li>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8924A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 12 10 18 20 6"/></svg>
-          Verified, reviewed, rated therapists
+          <span data-i18n="why.mend2">Verified, reviewed, rated therapists</span>
         </li>
         <li>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8924A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 12 10 18 20 6"/></svg>
-          Transparent pricing before you book
+          <span data-i18n="why.mend3">Transparent pricing before you book</span>
         </li>
       </ul>
-      <a href="#check" class="comp-cta">Check My Area</a>
+      <a href="#check" class="comp-cta" data-i18n="why.cta">Check My Area</a>
     </div>
   </div>
 </section>
@@ -375,9 +386,9 @@ footer{padding:36px 52px;border-top:1px solid var(--border);display:grid;grid-te
 <section class="chat-sec" id="check">
   <div class="chat-inner">
     <div class="chat-hdr reveal">
-      <div class="sec-label">Check Availability</div>
-      <h2>Is there a therapist available<br><em>near you tonight?</em></h2>
-      <p>Answer 3 quick questions and we'll confirm coverage in your area instantly.</p>
+      <div class="sec-label" data-i18n="check.label">Check Availability</div>
+      <h2 data-i18n-html="check.h2">Is there a therapist available<br><em>near you tonight?</em></h2>
+      <p data-i18n="check.sub">Answer 3 quick questions and we'll confirm coverage in your area instantly.</p>
     </div>
     <p class="live-activity">
       <span class="live-dot" aria-hidden="true"></span>
@@ -385,28 +396,28 @@ footer{padding:36px 52px;border-top:1px solid var(--border);display:grid;grid-te
     </p>
     <div class="chat-win" id="cw" role="log" aria-live="polite" aria-relevant="additions" aria-label="Availability check conversation">
       <div class="cb">
-        <div class="av">M</div>
-        <div class="ct">Hey! I'm your Mend concierge. Let's find a therapist near you. First — what city are you in?</div>
+        <div class="av" aria-hidden="true">M</div>
+        <div class="ct" data-i18n="chat.intro">Hey! I'm your Mend concierge. Let's find a therapist near you. First — what city are you in?</div>
       </div>
       <div class="choices" id="s1">
-        <button class="ch" onclick="city(this,'Ho Chi Minh City')">Ho Chi Minh City</button>
-        <button class="ch" onclick="city(this,'Hanoi')">Hanoi</button>
-        <button class="ch" onclick="city(this,'Da Nang')">Da Nang</button>
+        <button class="ch" data-city="hcmc" onclick="city(this,'hcmc')" data-i18n="city.hcmc">Ho Chi Minh City</button>
+        <button class="ch" data-city="hanoi" onclick="city(this,'hanoi')" data-i18n="city.hanoi">Hanoi</button>
+        <button class="ch" data-city="danang" onclick="city(this,'danang')" data-i18n="city.danang">Da Nang</button>
       </div>
     </div>
     <div class="chat-typing" id="chat-typing" role="status" aria-live="polite" hidden>
-      <span class="typing-text">Checking availability in <strong id="checking-city">your area</strong></span>
+      <span class="typing-text"><span data-i18n="chat.checking">Checking availability in</span> <strong id="checking-city">your area</strong></span>
       <span class="typing-dots" aria-hidden="true"><span></span><span></span><span></span></span>
     </div>
     <div class="result" id="res" role="status" aria-live="polite">
-      <h3>✓ Therapists available near you</h3>
-      <p id="resP">We have verified therapists ready in your area. Tap below to view profiles and pricing — your therapist can be at your door in under 60 minutes.</p>
-      <a href="https://glowvn.app.link/HMmvbeEUe3b" target="_blank" rel="noopener" class="btn-gold">View Availability &amp; Book Now</a>
+      <h3 data-i18n="result.h3">✓ Therapists available near you</h3>
+      <p id="resP" data-i18n="result.p">We have verified therapists ready in your area. Tap below to view profiles and pricing — your therapist can be at your door in under 60 minutes.</p>
+      <a href="https://glowvn.app.link/HMmvbeEUe3b" target="_blank" rel="noopener" class="btn-gold" data-i18n="result.cta">View Availability &amp; Book Now</a>
       <p class="guarantee-badge">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B8924A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        <em>Full refund if your therapist doesn't show. No questions asked.</em>
+        <em data-i18n="result.guarantee">Full refund if your therapist doesn't show. No questions asked.</em>
       </p>
-      <p class="result-note">Secure payment · Vetted therapists · Transparent pricing</p>
+      <p class="result-note" data-i18n="result.note">Secure payment · Vetted therapists · Transparent pricing</p>
     </div>
   </div>
 </section>
@@ -414,32 +425,32 @@ footer{padding:36px 52px;border-top:1px solid var(--border);display:grid;grid-te
 <!-- 5 · FAQ -->
 <section class="faq">
   <div class="faq-inner">
-    <div class="sec-label">Common questions</div>
-    <h2 class="sh">You probably <em>want to know.</em></h2>
+    <div class="sec-label" data-i18n="faq.label">Common questions</div>
+    <h2 class="sh" data-i18n-html="faq.h2">You probably <em>want to know.</em></h2>
 
     <details class="faq-item" open>
-      <summary>Is it safe to let someone into my room?</summary>
-      <p>All therapists are background-checked, identity-verified, and rated after every session.</p>
+      <summary data-i18n="faq.q1">Is it safe to let someone into my room?</summary>
+      <p data-i18n="faq.a1">All therapists are background-checked, identity-verified, and rated after every session.</p>
     </details>
     <details class="faq-item">
-      <summary>How much does it cost?</summary>
-      <p>Most 60-minute sessions start from ₫250,000. Pricing is fully visible before you book.</p>
+      <summary data-i18n="faq.q2">How much does it cost?</summary>
+      <p data-i18n="faq.a2">Most 60-minute sessions start from ₫250,000. Pricing is fully visible before you book.</p>
     </details>
     <details class="faq-item">
-      <summary>Can I pay with cash?</summary>
-      <p>Yes. Cash is accepted at the door. You can also pay by card through the app.</p>
+      <summary data-i18n="faq.q3">Can I pay with cash?</summary>
+      <p data-i18n="faq.a3">Yes. Cash is accepted at the door. You can also pay by card through the app.</p>
     </details>
     <details class="faq-item">
-      <summary>What if I need someone tonight?</summary>
-      <p>Same-day is the norm. Most therapists arrive within 60 minutes of booking.</p>
+      <summary data-i18n="faq.q4">What if I need someone tonight?</summary>
+      <p data-i18n="faq.a4">Same-day is the norm. Most therapists arrive within 60 minutes of booking.</p>
     </details>
     <details class="faq-item">
-      <summary>Do I have to download an app?</summary>
-      <p>Yes — takes 2 minutes. iOS and Android. Handles secure payment and booking confirmation.</p>
+      <summary data-i18n="faq.q5">Do I have to download an app?</summary>
+      <p data-i18n="faq.a5">Yes — takes 2 minutes. iOS and Android. Handles secure payment and booking confirmation.</p>
     </details>
     <details class="faq-item">
-      <summary>Does it work at hotels?</summary>
-      <p>Yes — hotels, apartments, villas, Airbnbs. Therapists bring everything needed.</p>
+      <summary data-i18n="faq.q6">Does it work at hotels?</summary>
+      <p data-i18n="faq.a6">Yes — hotels, apartments, villas, Airbnbs. Therapists bring everything needed.</p>
     </details>
   </div>
 </section>
@@ -447,7 +458,7 @@ footer{padding:36px 52px;border-top:1px solid var(--border);display:grid;grid-te
 <!-- FOOTER -->
 <footer>
   <div class="logo" style="font-size:16px">Mend</div>
-  <div class="footer-center">On-demand massage concierge · Vietnam</div>
+  <div class="footer-center" data-i18n="footer.center">On-demand massage concierge · Vietnam</div>
   <div class="footer-right">© 2025 Mend</div>
 </footer>
 
@@ -455,9 +466,9 @@ footer{padding:36px 52px;border-top:1px solid var(--border);display:grid;grid-te
 <div class="sticky-mobile-cta" id="sticky-mobile-cta">
   <div class="sticky-cta-meta">
     <span class="sticky-cta-dot" aria-hidden="true"></span>
-    Therapists available now
+    <span data-i18n="sticky.meta">Therapists available now</span>
   </div>
-  <a href="#check" class="sticky-cta-button">Check My Area</a>
+  <a href="#check" class="sticky-cta-button" data-i18n="sticky.cta">Check My Area</a>
 </div>
 
 <!-- GLOW BRIDGE MODAL -->
@@ -465,18 +476,160 @@ footer{padding:36px 52px;border-top:1px solid var(--border);display:grid;grid-te
   <div class="glow-bridge-backdrop" id="glow-bridge-backdrop"></div>
   <div class="glow-bridge-panel">
     <button class="glow-bridge-close" id="glow-bridge-close" aria-label="Close">×</button>
-    <p class="eyebrow eyebrow-bridge">One quick note</p>
-    <h3 id="bridge-title">Mend runs on <em>Glow.</em></h3>
-    <p class="glow-bridge-body">
+    <p class="eyebrow eyebrow-bridge" data-i18n="bridge.eyebrow">One quick note</p>
+    <h3 id="bridge-title" data-i18n-html="bridge.h3">Mend runs on <em>Glow.</em></h3>
+    <p class="glow-bridge-body" data-i18n-html="bridge.body">
       Vietnam's leading massage platform. You're being taken to Glow's app to complete your booking.
       <strong>Same therapists. Same pricing. Fully secure.</strong>
     </p>
-    <a href="#" class="glow-bridge-cta" id="glow-bridge-cta" target="_blank" rel="noopener">Continue to Book</a>
-    <button class="glow-bridge-back" id="glow-bridge-back">Go back</button>
+    <a href="#" class="glow-bridge-cta" id="glow-bridge-cta" target="_blank" rel="noopener" data-i18n="bridge.cta">Continue to Book</a>
+    <button class="glow-bridge-back" id="glow-bridge-back" data-i18n="bridge.back">Go back</button>
   </div>
 </div>
 
 <script>
+// ── i18n ──
+const I18N={
+  en:{
+    'nav.cta':'Check Availability',
+    'lang.toggleLabel':'Switch to Korean','lang.current':'EN','lang.other':'한',
+    'hero.eyebrow':'HCMC · Hanoi · Da Nang · Available Now',
+    'hero.h1':'A world-class<br>massage, <em>at your<br>door tonight.</em>',
+    'hero.trust':'From ₫250,000 · No hidden fees · Transparent pricing',
+    'hero.promise1':"You don't pay if you're not satisfied",
+    'hero.promise2':'Premium oils, made locally in Vietnam',
+    'hero.sub':'Tell us where you are. A vetted therapist will be at your door in under 60 minutes.',
+    'hero.cta':'Check My Area — Free & Instant',
+    'hero.proof':'10,000+ guests across Vietnam',
+    'how.label':'How It Works','how.h2':'Three taps <em>to relax.</em>',
+    'how.step1':'Tell us your area','how.step2':'Pick your therapist','how.step3':'Open your door',
+    'why.label':'Why Mend','why.h2':'Skip the search. <em>Skip the gamble.</em>',
+    'why.oldLabel':'The old way','why.mendLabel':'Recommended','why.mendPrice':'from 250K <small>VND</small>',
+    'why.old1':'30–45 min Grab ride each way','why.old2':"Can't vet the therapist beforehand",'why.old3':'24hr advance booking required',
+    'why.mend1':'Therapist at your door in under 60 min','why.mend2':'Verified, reviewed, rated therapists','why.mend3':'Transparent pricing before you book',
+    'why.cta':'Check My Area',
+    'check.label':'Check Availability','check.h2':'Is there a therapist available<br><em>near you tonight?</em>',
+    'check.sub':"Answer 3 quick questions and we'll confirm coverage in your area instantly.",
+    'live.text':({total,hcmc,hanoi,danang})=>`${total} therapists active right now (${hcmc} in HCMC · ${hanoi} in Hanoi · ${danang} in Da Nang)`,
+    'chat.intro':"Hey! I'm your Mend concierge. Let's find a therapist near you. First — what city are you in?",
+    'chat.cityReply':({city})=>`${city} — great, solid coverage there. When are you looking to book?`,
+    'chat.askType':'Last one — what kind of massage?',
+    'chat.checking':'Checking availability in',
+    'city.hcmc':'Ho Chi Minh City','city.hanoi':'Hanoi','city.danang':'Da Nang',
+    'time.tonight':'Tonight','time.tomorrow':'Tomorrow','time.weekend':'This weekend','time.exploring':'Just exploring',
+    'type.relax':'Relaxation / Swedish','type.deep':'Deep Tissue','type.couple':"Couple's Massage",'type.surprise':'Not sure — surprise me',
+    'result.h3':'✓ Therapists available near you',
+    'result.p':'We have verified therapists ready in your area. Tap below to view profiles and pricing — your therapist can be at your door in under 60 minutes.',
+    'result.confirmed':({city})=>`Therapists confirmed in ${city}. Tap below to view profiles and pricing — your therapist can be at your door in under 60 minutes.`,
+    'result.cta':'View Availability & Book Now',
+    'result.guarantee':"Full refund if your therapist doesn't show. No questions asked.",
+    'result.note':'Secure payment · Vetted therapists · Transparent pricing',
+    'faq.label':'Common questions','faq.h2':'You probably <em>want to know.</em>',
+    'faq.q1':'Is it safe to let someone into my room?',
+    'faq.a1':'All therapists are background-checked, identity-verified, and rated after every session.',
+    'faq.q2':'How much does it cost?',
+    'faq.a2':'Most 60-minute sessions start from ₫250,000. Pricing is fully visible before you book.',
+    'faq.q3':'Can I pay with cash?',
+    'faq.a3':'Yes. Cash is accepted at the door. You can also pay by card through the app.',
+    'faq.q4':'What if I need someone tonight?',
+    'faq.a4':'Same-day is the norm. Most therapists arrive within 60 minutes of booking.',
+    'faq.q5':'Do I have to download an app?',
+    'faq.a5':'Yes — takes 2 minutes. iOS and Android. Handles secure payment and booking confirmation.',
+    'faq.q6':'Does it work at hotels?',
+    'faq.a6':'Yes — hotels, apartments, villas, Airbnbs. Therapists bring everything needed.',
+    'footer.center':'On-demand massage concierge · Vietnam',
+    'sticky.meta':'Therapists available now','sticky.cta':'Check My Area',
+    'bridge.eyebrow':'One quick note','bridge.h3':'Mend runs on <em>Glow.</em>',
+    'bridge.body':"Vietnam's leading massage platform. You're being taken to Glow's app to complete your booking. <strong>Same therapists. Same pricing. Fully secure.</strong>",
+    'bridge.cta':'Continue to Book','bridge.back':'Go back'
+  },
+  ko:{
+    'nav.cta':'예약 확인',
+    'lang.toggleLabel':'Switch to English','lang.current':'한','lang.other':'EN',
+    'hero.eyebrow':'호치민 · 하노이 · 다낭 · 지금 이용 가능',
+    'hero.h1':'세계 최고 수준의<br>마사지, <em>오늘 밤<br>당신의 문 앞으로.</em>',
+    'hero.trust':'₫250,000부터 · 숨겨진 비용 없음 · 투명한 가격',
+    'hero.promise1':'만족하지 않으시면 결제하지 않습니다',
+    'hero.promise2':'베트남 현지에서 만든 프리미엄 오일',
+    'hero.sub':'위치를 알려주세요. 검증된 치료사가 60분 이내에 문 앞에 도착합니다.',
+    'hero.cta':'내 지역 확인하기 — 무료 & 즉시',
+    'hero.proof':'베트남 전역 10,000+ 고객',
+    'how.label':'이용 방법','how.h2':'세 번의 탭으로 <em>휴식을.</em>',
+    'how.step1':'지역을 알려주세요','how.step2':'치료사를 선택하세요','how.step3':'문을 열어주세요',
+    'why.label':'Mend를 선택하는 이유','why.h2':'검색은 그만. <em>도박도 그만.</em>',
+    'why.oldLabel':'기존 방식','why.mendLabel':'추천','why.mendPrice':'250K부터 <small>VND</small>',
+    'why.old1':'편도 30~45분 그랩 이동','why.old2':'사전에 치료사 확인 불가','why.old3':'24시간 사전 예약 필요',
+    'why.mend1':'60분 이내 문 앞 도착','why.mend2':'검증된 리뷰·평가 치료사','why.mend3':'예약 전 투명한 가격 공개',
+    'why.cta':'내 지역 확인하기',
+    'check.label':'예약 가능 확인','check.h2':'오늘 밤 근처에<br><em>이용 가능한 치료사가 있을까요?</em>',
+    'check.sub':'간단한 3가지 질문에 답하시면 지역 내 이용 가능 여부를 즉시 확인해드립니다.',
+    'live.text':({total,hcmc,hanoi,danang})=>`현재 ${total}명의 치료사가 활동 중입니다 (호치민 ${hcmc}명 · 하노이 ${hanoi}명 · 다낭 ${danang}명)`,
+    'chat.intro':'안녕하세요! Mend 컨시어지입니다. 근처 치료사를 찾아드릴게요. 먼저, 어느 도시에 계신가요?',
+    'chat.cityReply':({city})=>`${city} — 좋습니다, 해당 지역은 커버리지가 탄탄해요. 언제 예약하실 예정인가요?`,
+    'chat.askType':'마지막 — 어떤 마사지를 원하시나요?',
+    'chat.checking':'예약 가능 확인 중:',
+    'city.hcmc':'호치민','city.hanoi':'하노이','city.danang':'다낭',
+    'time.tonight':'오늘 밤','time.tomorrow':'내일','time.weekend':'이번 주말','time.exploring':'그냥 둘러보는 중',
+    'type.relax':'릴렉세이션 / 스웨디시','type.deep':'딥 티슈','type.couple':'커플 마사지','type.surprise':'추천해주세요',
+    'result.h3':'✓ 근처에 이용 가능한 치료사가 있습니다',
+    'result.p':'해당 지역에 검증된 치료사가 대기 중입니다. 아래를 눌러 프로필과 가격을 확인하세요 — 60분 이내에 문 앞에 도착합니다.',
+    'result.confirmed':({city})=>`${city}에서 치료사가 확인되었습니다. 아래를 눌러 프로필과 가격을 확인하세요 — 60분 이내에 문 앞에 도착합니다.`,
+    'result.cta':'예약 가능 확인 및 예약하기',
+    'result.guarantee':'치료사가 도착하지 않으면 전액 환불. 조건 없이 보장합니다.',
+    'result.note':'안전한 결제 · 검증된 치료사 · 투명한 가격',
+    'faq.label':'자주 묻는 질문','faq.h2':'궁금하실 만한 <em>몇 가지.</em>',
+    'faq.q1':'방에 사람을 들이는 것이 안전한가요?',
+    'faq.a1':'모든 치료사는 신원 조회와 본인 확인을 거쳤으며, 매 세션마다 고객 평가를 받습니다.',
+    'faq.q2':'비용은 얼마인가요?',
+    'faq.a2':'대부분의 60분 세션은 ₫250,000부터 시작합니다. 예약 전에 가격이 모두 공개됩니다.',
+    'faq.q3':'현금 결제가 가능한가요?',
+    'faq.a3':'네. 문 앞에서 현금 결제가 가능합니다. 앱을 통해 카드 결제도 하실 수 있습니다.',
+    'faq.q4':'오늘 밤 바로 필요한 경우는요?',
+    'faq.a4':'당일 예약이 일반적입니다. 대부분의 치료사는 예약 후 60분 이내에 도착합니다.',
+    'faq.q5':'앱을 다운로드해야 하나요?',
+    'faq.a5':'네 — 약 2분 소요됩니다. iOS와 Android 모두 지원하며, 안전한 결제와 예약 확인을 처리합니다.',
+    'faq.q6':'호텔에서도 이용 가능한가요?',
+    'faq.a6':'네 — 호텔, 아파트, 빌라, 에어비앤비 모두 가능합니다. 치료사가 필요한 모든 것을 가지고 옵니다.',
+    'footer.center':'온디맨드 마사지 컨시어지 · 베트남',
+    'sticky.meta':'지금 이용 가능','sticky.cta':'내 지역 확인',
+    'bridge.eyebrow':'잠깐 안내드립니다','bridge.h3':'Mend는 <em>Glow</em>에서 운영됩니다.',
+    'bridge.body':'베트남 1위 마사지 플랫폼. 예약을 완료하실 수 있도록 Glow 앱으로 이동합니다. <strong>동일한 치료사. 동일한 가격. 완전히 안전합니다.</strong>',
+    'bridge.cta':'예약 계속하기','bridge.back':'돌아가기'
+  }
+};
+let LANG=(localStorage.getItem('mend-lang')==='ko')?'ko':'en';
+function t(key,vars){
+  const v=I18N[LANG][key]??I18N.en[key]??key;
+  return typeof v==='function'?v(vars||{}):v;
+}
+function applyLang(){
+  document.documentElement.lang=LANG;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k=el.getAttribute('data-i18n');
+    const val=t(k);
+    if(typeof val==='string') el.textContent=val;
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el=>{
+    const k=el.getAttribute('data-i18n-html');
+    const val=t(k);
+    if(typeof val==='string') el.innerHTML=val;
+  });
+  const btn=document.getElementById('lang-toggle');
+  if(btn){
+    btn.textContent=t('lang.other');
+    btn.setAttribute('aria-label',t('lang.toggleLabel'));
+    btn.setAttribute('aria-pressed',LANG==='ko'?'true':'false');
+  }
+  if(typeof renderLiveActivity==='function') renderLiveActivity();
+}
+function setLang(lang){
+  LANG=lang;
+  localStorage.setItem('mend-lang',lang);
+  applyLang();
+}
+document.getElementById('lang-toggle').addEventListener('click',()=>setLang(LANG==='en'?'ko':'en'));
+// initial apply happens after DOM helpers below are defined, see end of script
+
 // Cursor
 const cur=document.getElementById('cur'),curR=document.getElementById('curR');
 let mx=0,my=0,rx=0,ry=0;
@@ -492,7 +645,7 @@ const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.tar
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
 // Live activity — stable per session, drifts ±1 occasionally so it feels live without flipping wildly on refresh
-(function setLiveActivity(){
+const liveCounts=(function setLiveActivity(){
   const KEY='mend-live-count';
   let total=parseInt(sessionStorage.getItem(KEY)||'0',10);
   if(!total){total=Math.floor(Math.random()*9)+10;sessionStorage.setItem(KEY,String(total));}
@@ -500,9 +653,17 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
   const hcmc=Math.floor(total*.5);
   const hanoi=Math.floor(total*.3);
   const danang=total-hcmc-hanoi;
-  const el=document.getElementById('live-activity-text');
-  if(el) el.textContent=`${total} therapists active right now (${hcmc} in HCMC · ${hanoi} in Hanoi · ${danang} in Da Nang)`;
+  return {total,hcmc,hanoi,danang};
 })();
+function renderLiveActivity(){
+  const el=document.getElementById('live-activity-text');
+  if(!el) return;
+  el.textContent=t('live.text',liveCounts);
+}
+renderLiveActivity();
+
+// Apply saved language (now that renderLiveActivity exists)
+applyLang();
 
 // Scroll progress bar (rAF-throttled)
 const progressBar=document.getElementById('scroll-progress');
@@ -559,25 +720,29 @@ function addChoices(opts,cb){
   document.getElementById('cw').appendChild(d);scrollCW();
 }
 
-function city(btn,c){
-  uCity=c;
+function cityName(key){return t('city.'+key);}
+function city(btn,cityKey){
+  uCity=cityKey;
   document.getElementById('s1').querySelectorAll('button').forEach(b=>{b.disabled=true;b.classList.remove('sel');});
   btn.classList.add('sel');
-  userMsg(c);
-  botMsg(`${c} — great, solid coverage there. When are you looking to book?`,350).then(()=>{
-    addChoices(['Tonight','Tomorrow','This weekend','Just exploring'],(t)=>{
-      userMsg(t);
-      botMsg('Last one — what kind of massage?',350).then(()=>{
-        addChoices(['Relaxation / Swedish','Deep Tissue','Couple\'s Massage','Not sure — surprise me'],(type)=>{
+  const cName=cityName(cityKey);
+  userMsg(cName);
+  botMsg(t('chat.cityReply',{city:cName}),350).then(()=>{
+    const timeKeys=['tonight','tomorrow','weekend','exploring'];
+    addChoices(timeKeys.map(k=>t('time.'+k)),(time)=>{
+      userMsg(time);
+      botMsg(t('chat.askType'),350).then(()=>{
+        const typeKeys=['relax','deep','couple','surprise'];
+        addChoices(typeKeys.map(k=>t('type.'+k)),(type)=>{
           userMsg(type);
           const typing=document.getElementById('chat-typing');
-          document.getElementById('checking-city').textContent=uCity;
+          document.getElementById('checking-city').textContent=cName;
           typing.hidden=false;
           typing.scrollIntoView({behavior:'smooth',block:'center'});
           setTimeout(()=>{
             typing.hidden=true;
             const r=document.getElementById('res');
-            document.getElementById('resP').textContent=`Therapists confirmed in ${uCity}. Tap below to view profiles and pricing — your therapist can be at your door in under 60 minutes.`;
+            document.getElementById('resP').textContent=t('result.confirmed',{city:cName});
             r.classList.add('show');
             r.scrollIntoView({behavior:'smooth',block:'center'});
           },1600);
