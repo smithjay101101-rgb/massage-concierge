@@ -44,7 +44,7 @@ src="https://www.facebook.com/tr?id=1599265507806732&ev=PageView&noscript=1"
 }
 html{scroll-behavior:smooth;scroll-padding-top:80px}
 body{background:var(--bg);color:var(--ink);font-family:'DM Sans','Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif;font-size:16px;font-weight:400;line-height:1.6;overflow-x:hidden}
-html[lang="ko"] h1,html[lang="ko"] h2,html[lang="ko"] h3,html[lang="ko"] .step-label,html[lang="ko"] .faq-item summary,html[lang="ko"] .glow-bridge h3{font-family:'Cormorant Garamond','Apple SD Gothic Neo','Nanum Myeongjo',serif;letter-spacing:-.01em}
+html[lang="ko"] h1,html[lang="ko"] h2,html[lang="ko"] h3,html[lang="ko"] .check-h2,html[lang="ko"] .step-label,html[lang="ko"] .faq-item summary,html[lang="ko"] .glow-popup h3{font-family:'Cormorant Garamond','Apple SD Gothic Neo','Nanum Myeongjo',serif;letter-spacing:-.01em}
 
 /* ── FOCUS ── */
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
@@ -127,35 +127,15 @@ h2.sh em{font-style:italic;color:var(--gold)}
 .step-num{font-family:'Cormorant Garamond',serif;font-size:54px;font-weight:300;color:var(--gold);line-height:1;display:block}
 .step-label{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;line-height:1.25;color:var(--ink);margin:0}
 
-/* ── CHECK FORM ── */
-.chat-sec{padding:110px 52px;background:#FAF6EE;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold)}
-.chat-inner{max-width:700px;margin:0 auto}
-.chat-hdr{text-align:center;margin-bottom:44px}
-.chat-hdr .sec-label{justify-content:center}
-.chat-hdr .sec-label::after,.chat-hdr .sec-label::before{display:none}
-.chat-hdr h2{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,5vw,58px);font-weight:300;line-height:1.08;margin-bottom:16px;color:var(--ink)}
-.chat-hdr h2 em{font-style:italic;color:var(--gold)}
-.chat-hdr p{color:var(--body);font-size:17px;line-height:1.7}
-.chat-win{background:var(--white);border:1.5px solid var(--border);padding:28px;display:flex;flex-direction:column;gap:18px;max-height:500px;overflow-y:auto}
-.cb{display:flex;gap:14px;align-items:flex-start;animation:fu .35s ease forwards}
-.av{width:36px;height:36px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;color:var(--white);font-weight:600;font-family:'Cormorant Garamond',serif}
-.ct{background:var(--bg);border:1.5px solid var(--border);padding:14px 20px;font-size:15px;line-height:1.75;color:var(--body);max-width:82%}
-.choices{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px;animation:fu .4s ease .15s both}
-.ch{background:var(--white);border:1.5px solid var(--border);color:var(--ink);padding:11px 22px;font-family:'DM Sans',sans-serif;font-size:14px;cursor:pointer;transition:all .22s;font-weight:500;min-height:44px}
-.ch:hover{border-color:var(--gold);background:var(--gold-bg);color:var(--gold-d)}
-.ch.sel{background:var(--gold);color:var(--white);border-color:var(--gold);font-weight:600}
-.ch:disabled{opacity:.4;cursor:not-allowed}
-.ucb{justify-content:flex-end}
-.ucb .ct{background:var(--gold-bg);border-color:rgba(184,146,74,.4);color:var(--gold-d);font-weight:500}
-.typ{display:flex;gap:5px;padding:14px 20px;background:var(--bg);border:1.5px solid var(--border);width:fit-content}
-.td{width:6px;height:6px;background:var(--muted);border-radius:50%;animation:tb 1.2s ease infinite}
-.td:nth-child(2){animation-delay:.2s}
-.td:nth-child(3){animation-delay:.4s}
-.result{display:none;margin-top:28px;background:var(--green-bg);border:1.5px solid rgba(46,125,50,.3);padding:40px;text-align:center;animation:fu .5s ease forwards}
-.result.show{display:block}
-.result h3{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:400;margin-bottom:14px;color:var(--ink)}
-.result p{color:var(--body);font-size:16px;margin-bottom:28px;line-height:1.8}
-.result-note{margin-top:18px;font-size:13px;color:var(--muted)}
+/* ── CHECK AVAILABILITY (direct CTA) ── */
+.check-availability{padding:96px 52px;background:#FAF6EE;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold)}
+.check-inner{max-width:720px;margin:0 auto;text-align:center}
+.check-eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;font-weight:600}
+.check-h2{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,5vw,56px);font-weight:300;line-height:1.1;margin-bottom:16px;color:var(--ink)}
+.check-h2 em{font-style:italic;color:var(--gold)}
+.check-sub{font-size:16px;color:rgba(28,24,20,.62);line-height:1.6;margin-bottom:28px;max-width:480px;margin-left:auto;margin-right:auto}
+.check-cta-block{margin-top:20px;display:flex;flex-direction:column;align-items:center}
+.btn-large{padding:20px 52px;font-size:14px;letter-spacing:.14em;min-height:56px}
 
 /* ── GUARANTEE BADGE (under booking CTA) ── */
 .guarantee-badge{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:14px;margin-bottom:4px;font-size:12.5px;color:rgba(28,24,20,.55);font-style:italic;line-height:1.4}
@@ -182,35 +162,41 @@ h2.sh em{font-style:italic;color:var(--gold)}
   .sticky-mobile-cta{display:none!important}
 }
 
-/* ── CHAT TYPING (availability check) ── */
-.chat-typing[hidden]{display:none}
-.chat-typing{display:flex;align-items:center;justify-content:center;gap:12px;padding:18px 22px;background:rgba(184,146,74,.06);border:1px solid rgba(184,146,74,.18);border-radius:10px;font-size:14px;color:rgba(28,24,20,.7);margin-top:20px;animation:fu .35s ease forwards}
-.chat-typing .typing-text strong{color:var(--ink);font-weight:600}
-.typing-dots{display:inline-flex;gap:4px;margin-left:4px}
-.typing-dots span{width:6px;height:6px;background:var(--gold);border-radius:50%;animation:typingBounce 1.4s infinite ease-in-out}
-.typing-dots span:nth-child(2){animation-delay:.2s}
-.typing-dots span:nth-child(3){animation-delay:.4s}
-@keyframes typingBounce{0%,80%,100%{transform:translateY(0);opacity:.4}40%{transform:translateY(-4px);opacity:1}}
-@media(prefers-reduced-motion:reduce){.typing-dots span{animation:none;opacity:.6}}
-
-/* ── GLOW BRIDGE MODAL ── */
-.glow-bridge[hidden]{display:none}
-.glow-bridge{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:20px}
-.glow-bridge-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.5);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);animation:fu .25s ease}
-.glow-bridge-panel{position:relative;background:#FAF6EE;max-width:440px;width:100%;padding:44px 32px 32px;border-radius:8px;border-top:3px solid var(--gold);box-shadow:0 24px 60px rgba(0,0,0,.2);text-align:center;animation:fu .35s ease}
-.glow-bridge-close{position:absolute;top:6px;right:6px;width:44px;height:44px;background:transparent;border:none;font-size:26px;color:rgba(28,24,20,.5);cursor:pointer;line-height:1;font-family:inherit;display:flex;align-items:center;justify-content:center;border-radius:50%}
-.glow-bridge-close:hover{background:rgba(0,0,0,.05);color:var(--ink)}
-.glow-bridge-close:hover{color:var(--ink)}
+/* ── GLOW + DISCOUNT POPUP ── */
+.glow-popup[hidden]{display:none}
+.glow-popup{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:20px;animation:popupFadeIn .25s ease-out}
+@keyframes popupFadeIn{from{opacity:0}to{opacity:1}}
+.glow-popup-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.glow-popup-panel{position:relative;background:#FAF6EE;max-width:460px;width:100%;border-radius:10px;box-shadow:0 24px 60px rgba(0,0,0,.25);overflow:hidden;animation:popupSlideUp .3s ease-out}
+@keyframes popupSlideUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+@media(prefers-reduced-motion:reduce){.glow-popup,.glow-popup-panel{animation:none!important}}
+.glow-popup-close{position:absolute;top:10px;right:10px;width:44px;height:44px;background:rgba(0,0,0,.06);border:none;border-radius:50%;font-size:22px;color:rgba(28,24,20,.55);cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center;line-height:1;font-family:inherit;transition:background .15s ease}
+.glow-popup-close:hover{background:rgba(0,0,0,.12);color:var(--ink)}
+.glow-popup-discount{background:linear-gradient(135deg,var(--gold) 0%,var(--gold-d) 100%);color:var(--white);padding:20px 24px;display:flex;align-items:center;justify-content:center;gap:14px;text-align:center;flex-wrap:wrap}
+.discount-tag{font-size:10px;letter-spacing:.22em;text-transform:uppercase;background:rgba(255,255,255,.22);padding:5px 11px;border-radius:3px;font-weight:600}
+.discount-amount{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;letter-spacing:.01em;font-style:italic}
+.glow-popup-content{padding:32px 32px 28px;text-align:center}
 .eyebrow-bridge{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-weight:600}
-.glow-bridge h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;margin-bottom:14px;color:var(--ink);line-height:1.2}
-.glow-bridge h3 em{font-style:italic;color:var(--gold)}
-.glow-bridge-body{font-size:14.5px;line-height:1.7;color:rgba(28,24,20,.7);margin-bottom:26px}
-.glow-bridge-body strong{color:var(--ink);font-weight:600;display:inline}
-.glow-bridge-cta{display:block;background:var(--gold);color:var(--white);text-decoration:none;padding:16px;border-radius:4px;font-family:'DM Sans',sans-serif;font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:13px;margin-bottom:12px;transition:background .2s ease,transform .1s ease;min-height:52px}
-.glow-bridge-cta:hover{background:var(--gold-d)}
-.glow-bridge-cta:active{transform:scale(.97)}
-.glow-bridge-back{background:transparent;border:none;color:rgba(28,24,20,.5);font-size:13px;cursor:pointer;text-decoration:underline;font-family:inherit;padding:6px}
-.glow-bridge-back:hover{color:var(--ink)}
+.glow-popup h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;margin-bottom:14px;color:var(--ink);line-height:1.2}
+.glow-popup h3 em{font-style:italic;color:var(--gold)}
+.glow-popup-body{font-size:14.5px;line-height:1.65;color:rgba(28,24,20,.7);margin-bottom:22px}
+.glow-popup-body strong{color:var(--ink);font-weight:600}
+.glow-popup-perks{list-style:none;padding:0;margin:0 0 26px;text-align:left;display:inline-block}
+.glow-popup-perks li{display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(28,24,20,.78);padding:7px 0;line-height:1.4}
+.glow-popup-perks svg{flex-shrink:0}
+.glow-popup-cta{display:block;background:var(--gold);color:var(--white);text-decoration:none;padding:17px 16px;border-radius:4px;font-family:'DM Sans','Apple SD Gothic Neo',sans-serif;font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:14px;margin-bottom:8px;transition:background .2s ease,transform .1s ease;min-height:52px}
+.glow-popup-cta:hover{background:var(--gold-d)}
+.glow-popup-cta:active{transform:scale(.97)}
+.glow-popup-back{background:transparent;border:none;color:rgba(28,24,20,.5);font-size:13px;cursor:pointer;text-decoration:underline;font-family:inherit;padding:8px}
+.glow-popup-back:hover{color:var(--ink)}
+@media(max-width:480px){
+  .glow-popup{padding:12px}
+  .glow-popup-discount{padding:16px 18px;gap:10px}
+  .discount-amount{font-size:21px}
+  .glow-popup-content{padding:26px 22px 22px}
+  .glow-popup h3{font-size:24px}
+  .glow-popup-body{font-size:13.5px;margin-bottom:18px}
+}
 
 /* ── FAQ ── */
 .faq{padding:110px 52px}
@@ -254,8 +240,10 @@ footer{padding:36px 52px;border-top:1px solid var(--border);display:grid;grid-te
   .hero-act{margin-top:32px;gap:16px;align-items:stretch}
   .hero-proof{justify-content:flex-start}
   .sec{padding:64px 20px}
-  .chat-sec,.faq{padding:64px 20px}
-  .chat-win{max-height:none;overflow:visible}
+  .check-availability,.faq{padding:64px 20px}
+  .check-h2{font-size:clamp(28px,7vw,42px)}
+  .check-sub{font-size:15px}
+  .btn-large{padding:18px 28px;font-size:13px;width:100%;max-width:340px}
   .comparison{grid-template-columns:1fr;gap:14px}
   .comp-card{padding:32px 26px}
   .comp-price{font-size:42px;margin-bottom:22px}
@@ -287,7 +275,7 @@ footer{padding:36px 52px;border-top:1px solid var(--border);display:grid;grid-te
   <div class="logo">Mend</div>
   <div class="nav-right">
     <button type="button" class="lang-toggle" id="lang-toggle" aria-label="Switch to Korean" aria-pressed="false">한</button>
-    <a href="#check" class="btn-outline" data-i18n="nav.cta">Check Availability</a>
+    <a href="#check" class="btn-outline" data-i18n="nav.cta">Book Massage Now</a>
   </div>
 </nav>
 
@@ -309,7 +297,7 @@ footer{padding:36px 52px;border-top:1px solid var(--border);display:grid;grid-te
   </ul>
   <p class="hero-p" data-i18n="hero.sub">Tell us where you are. A vetted therapist will be at your door in under 60 minutes.</p>
   <div class="hero-act">
-    <a href="#check" class="btn-gold" data-i18n="hero.cta">Check My Area — Free &amp; Instant</a>
+    <a href="#check" class="btn-gold" data-i18n="hero.cta">Book Massage Now</a>
     <div class="hero-proof">
       <span class="stars" aria-hidden="true">★★★★★</span>
       <span data-i18n="hero.proof">10,000+ guests across Vietnam</span>
@@ -377,47 +365,31 @@ footer{padding:36px 52px;border-top:1px solid var(--border);display:grid;grid-te
           <span data-i18n="why.mend3">Transparent pricing before you book</span>
         </li>
       </ul>
-      <a href="#check" class="comp-cta" data-i18n="why.cta">Check My Area</a>
+      <a href="#check" class="comp-cta" data-i18n="why.cta">Book Massage Now</a>
     </div>
   </div>
 </section>
 
 <!-- 4 · CHECK AVAILABILITY FORM -->
-<section class="chat-sec" id="check">
-  <div class="chat-inner">
-    <div class="chat-hdr reveal">
-      <div class="sec-label" data-i18n="check.label">Check Availability</div>
-      <h2 data-i18n-html="check.h2">Is there a therapist available<br><em>near you tonight?</em></h2>
-      <p data-i18n="check.sub">Answer 3 quick questions and we'll confirm coverage in your area instantly.</p>
+<section class="check-availability" id="check">
+  <div class="check-inner">
+    <div class="reveal">
+      <p class="check-eyebrow" data-i18n="check.label">Book tonight</p>
+      <h2 class="check-h2" data-i18n-html="check.h2">A therapist at your door <em>in under 60 minutes.</em></h2>
+      <p class="check-sub" data-i18n="check.sub">Skip the chat. Skip the search. Tap the button.</p>
     </div>
+
     <p class="live-activity">
       <span class="live-dot" aria-hidden="true"></span>
       <span id="live-activity-text">14 therapists active right now across HCMC, Hanoi &amp; Da Nang</span>
     </p>
-    <div class="chat-win" id="cw" role="log" aria-live="polite" aria-relevant="additions" aria-label="Availability check conversation">
-      <div class="cb">
-        <div class="av" aria-hidden="true">M</div>
-        <div class="ct" data-i18n="chat.intro">Hey! I'm your Mend concierge. Let's find a therapist near you. First — what city are you in?</div>
-      </div>
-      <div class="choices" id="s1">
-        <button class="ch" data-city="hcmc" onclick="city(this,'hcmc')" data-i18n="city.hcmc">Ho Chi Minh City</button>
-        <button class="ch" data-city="hanoi" onclick="city(this,'hanoi')" data-i18n="city.hanoi">Hanoi</button>
-        <button class="ch" data-city="danang" onclick="city(this,'danang')" data-i18n="city.danang">Da Nang</button>
-      </div>
-    </div>
-    <div class="chat-typing" id="chat-typing" role="status" aria-live="polite" hidden>
-      <span class="typing-text"><span data-i18n="chat.checking">Checking availability in</span> <strong id="checking-city">your area</strong></span>
-      <span class="typing-dots" aria-hidden="true"><span></span><span></span><span></span></span>
-    </div>
-    <div class="result" id="res" role="status" aria-live="polite">
-      <h3 data-i18n="result.h3">✓ Therapists available near you</h3>
-      <p id="resP" data-i18n="result.p">We have verified therapists ready in your area. Tap below to view profiles and pricing — your therapist can be at your door in under 60 minutes.</p>
-      <a href="https://glowvn.app.link/HMmvbeEUe3b" target="_blank" rel="noopener" class="btn-gold" data-i18n="result.cta">View Availability &amp; Book Now</a>
+
+    <div class="check-cta-block">
+      <button type="button" class="btn-gold btn-large" id="open-glow-popup" data-i18n="check.cta">Book Massage Now</button>
       <p class="guarantee-badge">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B8924A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        <em data-i18n="result.guarantee">Full refund if your therapist doesn't show. No questions asked.</em>
+        <em data-i18n="check.guarantee">Full refund if your therapist doesn't show. No questions asked.</em>
       </p>
-      <p class="result-note" data-i18n="result.note">Secure payment · Vetted therapists · Transparent pricing</p>
     </div>
   </div>
 </section>
@@ -468,22 +440,43 @@ footer{padding:36px 52px;border-top:1px solid var(--border);display:grid;grid-te
     <span class="sticky-cta-dot" aria-hidden="true"></span>
     <span data-i18n="sticky.meta">Therapists available now</span>
   </div>
-  <a href="#check" class="sticky-cta-button" data-i18n="sticky.cta">Check My Area</a>
+  <a href="#check" class="sticky-cta-button" data-i18n="sticky.cta">Book Massage Now</a>
 </div>
 
-<!-- GLOW BRIDGE MODAL -->
-<div class="glow-bridge" id="glow-bridge" role="dialog" aria-modal="true" aria-labelledby="bridge-title" hidden>
-  <div class="glow-bridge-backdrop" id="glow-bridge-backdrop"></div>
-  <div class="glow-bridge-panel">
-    <button class="glow-bridge-close" id="glow-bridge-close" aria-label="Close">×</button>
-    <p class="eyebrow eyebrow-bridge" data-i18n="bridge.eyebrow">One quick note</p>
-    <h3 id="bridge-title" data-i18n-html="bridge.h3">Mend runs on <em>Glow.</em></h3>
-    <p class="glow-bridge-body" data-i18n-html="bridge.body">
-      Vietnam's leading massage platform. You're being taken to Glow's app to complete your booking.
-      <strong>Same therapists. Same pricing. Fully secure.</strong>
-    </p>
-    <a href="#" class="glow-bridge-cta" id="glow-bridge-cta" target="_blank" rel="noopener" data-i18n="bridge.cta">Continue to Book</a>
-    <button class="glow-bridge-back" id="glow-bridge-back" data-i18n="bridge.back">Go back</button>
+<!-- GLOW + DISCOUNT POPUP -->
+<div class="glow-popup" id="glow-popup" role="dialog" aria-modal="true" aria-labelledby="popup-title" hidden>
+  <div class="glow-popup-backdrop" id="glow-popup-backdrop"></div>
+  <div class="glow-popup-panel">
+    <button class="glow-popup-close" id="glow-popup-close" aria-label="Close popup">×</button>
+
+    <div class="glow-popup-discount">
+      <span class="discount-tag" data-i18n="popup.tag">FIRST BOOKING</span>
+      <span class="discount-amount" data-i18n="popup.amount">Up to 50% off</span>
+    </div>
+
+    <div class="glow-popup-content">
+      <p class="eyebrow-bridge" data-i18n="popup.eyebrow">One quick note</p>
+      <h3 id="popup-title" data-i18n-html="popup.h3">Mend runs on <em>Glow.</em></h3>
+      <p class="glow-popup-body" data-i18n-html="popup.body">Glow is Vietnam's leading massage booking platform. Download the app to see live availability, lock in your therapist, and unlock <strong>up to 50% off your first session</strong> — applied automatically at checkout.</p>
+
+      <ul class="glow-popup-perks">
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B8924A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+          <span data-i18n="popup.perk1">Same vetted therapists</span>
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B8924A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+          <span data-i18n="popup.perk2">Transparent pricing, no surprises</span>
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B8924A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+          <span data-i18n="popup.perk3">Discount applied automatically</span>
+        </li>
+      </ul>
+
+      <a href="https://glowvn.app.link/HMmvbeEUe3b" target="_blank" rel="noopener" class="glow-popup-cta" id="glow-popup-cta" data-i18n="popup.cta">Book Massage Now</a>
+      <button type="button" class="glow-popup-back" id="glow-popup-back" data-i18n="popup.back">Maybe later</button>
+    </div>
   </div>
 </div>
 
@@ -491,7 +484,7 @@ footer{padding:36px 52px;border-top:1px solid var(--border);display:grid;grid-te
 // ── i18n ──
 const I18N={
   en:{
-    'nav.cta':'Check Availability',
+    'nav.cta':'Book Massage Now',
     'lang.toggleLabel':'Switch to Korean','lang.current':'EN','lang.other':'한',
     'hero.eyebrow':'HCMC · Hanoi · Da Nang · Available Now',
     'hero.h1':'A world-class<br>massage, <em>at your<br>door tonight.</em>',
@@ -499,7 +492,7 @@ const I18N={
     'hero.promise1':"You don't pay if you're not satisfied",
     'hero.promise2':'Premium oils, made locally in Vietnam',
     'hero.sub':'Tell us where you are. A vetted therapist will be at your door in under 60 minutes.',
-    'hero.cta':'Check My Area — Free & Instant',
+    'hero.cta':'Book Massage Now',
     'hero.proof':'10,000+ guests across Vietnam',
     'how.label':'How It Works','how.h2':'Three taps <em>to relax.</em>',
     'how.step1':'Tell us your area','how.step2':'Pick your therapist','how.step3':'Open your door',
@@ -507,23 +500,12 @@ const I18N={
     'why.oldLabel':'The old way','why.mendLabel':'Recommended','why.mendPrice':'from 250K <small>VND</small>',
     'why.old1':'30–45 min Grab ride each way','why.old2':"Can't vet the therapist beforehand",'why.old3':'24hr advance booking required',
     'why.mend1':'Therapist at your door in under 60 min','why.mend2':'Verified, reviewed, rated therapists','why.mend3':'Transparent pricing before you book',
-    'why.cta':'Check My Area',
-    'check.label':'Check Availability','check.h2':'Is there a therapist available<br><em>near you tonight?</em>',
-    'check.sub':"Answer 3 quick questions and we'll confirm coverage in your area instantly.",
+    'why.cta':'Book Massage Now',
+    'check.label':'Book tonight','check.h2':'A therapist at your door <em>in under 60 minutes.</em>',
+    'check.sub':'Skip the chat. Skip the search. Tap the button.',
+    'check.cta':'Book Massage Now',
+    'check.guarantee':"Full refund if your therapist doesn't show. No questions asked.",
     'live.text':({total,hcmc,hanoi,danang})=>`${total} therapists active right now (${hcmc} in HCMC · ${hanoi} in Hanoi · ${danang} in Da Nang)`,
-    'chat.intro':"Hey! I'm your Mend concierge. Let's find a therapist near you. First — what city are you in?",
-    'chat.cityReply':({city})=>`${city} — great, solid coverage there. When are you looking to book?`,
-    'chat.askType':'Last one — what kind of massage?',
-    'chat.checking':'Checking availability in',
-    'city.hcmc':'Ho Chi Minh City','city.hanoi':'Hanoi','city.danang':'Da Nang',
-    'time.tonight':'Tonight','time.tomorrow':'Tomorrow','time.weekend':'This weekend','time.exploring':'Just exploring',
-    'type.relax':'Relaxation / Swedish','type.deep':'Deep Tissue','type.couple':"Couple's Massage",'type.surprise':'Not sure — surprise me',
-    'result.h3':'✓ Therapists available near you',
-    'result.p':'We have verified therapists ready in your area. Tap below to view profiles and pricing — your therapist can be at your door in under 60 minutes.',
-    'result.confirmed':({city})=>`Therapists confirmed in ${city}. Tap below to view profiles and pricing — your therapist can be at your door in under 60 minutes.`,
-    'result.cta':'View Availability & Book Now',
-    'result.guarantee':"Full refund if your therapist doesn't show. No questions asked.",
-    'result.note':'Secure payment · Vetted therapists · Transparent pricing',
     'faq.label':'Common questions','faq.h2':'You probably <em>want to know.</em>',
     'faq.q1':'Is it safe to let someone into my room?',
     'faq.a1':'All therapists are background-checked, identity-verified, and rated after every session.',
@@ -538,13 +520,17 @@ const I18N={
     'faq.q6':'Does it work at hotels?',
     'faq.a6':'Yes — hotels, apartments, villas, Airbnbs. Therapists bring everything needed.',
     'footer.center':'On-demand massage concierge · Vietnam',
-    'sticky.meta':'Therapists available now','sticky.cta':'Check My Area',
-    'bridge.eyebrow':'One quick note','bridge.h3':'Mend runs on <em>Glow.</em>',
-    'bridge.body':"Vietnam's leading massage platform. You're being taken to Glow's app to complete your booking. <strong>Same therapists. Same pricing. Fully secure.</strong>",
-    'bridge.cta':'Continue to Book','bridge.back':'Go back'
+    'sticky.meta':'Therapists available now','sticky.cta':'Book Massage Now',
+    'popup.tag':'FIRST BOOKING','popup.amount':'Up to 50% off',
+    'popup.eyebrow':'One quick note','popup.h3':'Mend runs on <em>Glow.</em>',
+    'popup.body':"Glow is Vietnam's leading massage booking platform. Download the app to see live availability, lock in your therapist, and unlock <strong>up to 50% off your first session</strong> — applied automatically at checkout.",
+    'popup.perk1':'Same vetted therapists',
+    'popup.perk2':'Transparent pricing, no surprises',
+    'popup.perk3':'Discount applied automatically',
+    'popup.cta':'Book Massage Now','popup.back':'Maybe later'
   },
   ko:{
-    'nav.cta':'예약 확인',
+    'nav.cta':'마사지 예약하기',
     'lang.toggleLabel':'Switch to English','lang.current':'한','lang.other':'EN',
     'hero.eyebrow':'호치민 · 하노이 · 다낭 · 지금 이용 가능',
     'hero.h1':'세계 최고 수준의<br>마사지, <em>오늘 밤<br>당신의 문 앞으로.</em>',
@@ -552,7 +538,7 @@ const I18N={
     'hero.promise1':'만족하지 않으시면 결제하지 않습니다',
     'hero.promise2':'베트남 현지에서 만든 프리미엄 오일',
     'hero.sub':'위치를 알려주세요. 검증된 치료사가 60분 이내에 문 앞에 도착합니다.',
-    'hero.cta':'내 지역 확인하기 — 무료 & 즉시',
+    'hero.cta':'마사지 예약하기',
     'hero.proof':'베트남 전역 10,000+ 고객',
     'how.label':'이용 방법','how.h2':'세 번의 탭으로 <em>휴식을.</em>',
     'how.step1':'지역을 알려주세요','how.step2':'치료사를 선택하세요','how.step3':'문을 열어주세요',
@@ -560,23 +546,12 @@ const I18N={
     'why.oldLabel':'기존 방식','why.mendLabel':'추천','why.mendPrice':'250K부터 <small>VND</small>',
     'why.old1':'편도 30~45분 그랩 이동','why.old2':'사전에 치료사 확인 불가','why.old3':'24시간 사전 예약 필요',
     'why.mend1':'60분 이내 문 앞 도착','why.mend2':'검증된 리뷰·평가 치료사','why.mend3':'예약 전 투명한 가격 공개',
-    'why.cta':'내 지역 확인하기',
-    'check.label':'예약 가능 확인','check.h2':'오늘 밤 근처에<br><em>이용 가능한 치료사가 있을까요?</em>',
-    'check.sub':'간단한 3가지 질문에 답하시면 지역 내 이용 가능 여부를 즉시 확인해드립니다.',
+    'why.cta':'마사지 예약하기',
+    'check.label':'오늘 밤 예약','check.h2':'치료사가 문 앞에 <em>60분 이내 도착.</em>',
+    'check.sub':'채팅도, 검색도 그만. 버튼만 누르세요.',
+    'check.cta':'마사지 예약하기',
+    'check.guarantee':'치료사가 도착하지 않으면 전액 환불. 조건 없이 보장합니다.',
     'live.text':({total,hcmc,hanoi,danang})=>`현재 ${total}명의 치료사가 활동 중입니다 (호치민 ${hcmc}명 · 하노이 ${hanoi}명 · 다낭 ${danang}명)`,
-    'chat.intro':'안녕하세요! Mend 컨시어지입니다. 근처 치료사를 찾아드릴게요. 먼저, 어느 도시에 계신가요?',
-    'chat.cityReply':({city})=>`${city} — 좋습니다, 해당 지역은 커버리지가 탄탄해요. 언제 예약하실 예정인가요?`,
-    'chat.askType':'마지막 — 어떤 마사지를 원하시나요?',
-    'chat.checking':'예약 가능 확인 중:',
-    'city.hcmc':'호치민','city.hanoi':'하노이','city.danang':'다낭',
-    'time.tonight':'오늘 밤','time.tomorrow':'내일','time.weekend':'이번 주말','time.exploring':'그냥 둘러보는 중',
-    'type.relax':'릴렉세이션 / 스웨디시','type.deep':'딥 티슈','type.couple':'커플 마사지','type.surprise':'추천해주세요',
-    'result.h3':'✓ 근처에 이용 가능한 치료사가 있습니다',
-    'result.p':'해당 지역에 검증된 치료사가 대기 중입니다. 아래를 눌러 프로필과 가격을 확인하세요 — 60분 이내에 문 앞에 도착합니다.',
-    'result.confirmed':({city})=>`${city}에서 치료사가 확인되었습니다. 아래를 눌러 프로필과 가격을 확인하세요 — 60분 이내에 문 앞에 도착합니다.`,
-    'result.cta':'예약 가능 확인 및 예약하기',
-    'result.guarantee':'치료사가 도착하지 않으면 전액 환불. 조건 없이 보장합니다.',
-    'result.note':'안전한 결제 · 검증된 치료사 · 투명한 가격',
     'faq.label':'자주 묻는 질문','faq.h2':'궁금하실 만한 <em>몇 가지.</em>',
     'faq.q1':'방에 사람을 들이는 것이 안전한가요?',
     'faq.a1':'모든 치료사는 신원 조회와 본인 확인을 거쳤으며, 매 세션마다 고객 평가를 받습니다.',
@@ -591,10 +566,14 @@ const I18N={
     'faq.q6':'호텔에서도 이용 가능한가요?',
     'faq.a6':'네 — 호텔, 아파트, 빌라, 에어비앤비 모두 가능합니다. 치료사가 필요한 모든 것을 가지고 옵니다.',
     'footer.center':'온디맨드 마사지 컨시어지 · 베트남',
-    'sticky.meta':'지금 이용 가능','sticky.cta':'내 지역 확인',
-    'bridge.eyebrow':'잠깐 안내드립니다','bridge.h3':'Mend는 <em>Glow</em>에서 운영됩니다.',
-    'bridge.body':'베트남 1위 마사지 플랫폼. 예약을 완료하실 수 있도록 Glow 앱으로 이동합니다. <strong>동일한 치료사. 동일한 가격. 완전히 안전합니다.</strong>',
-    'bridge.cta':'예약 계속하기','bridge.back':'돌아가기'
+    'sticky.meta':'지금 이용 가능','sticky.cta':'마사지 예약하기',
+    'popup.tag':'첫 예약 한정','popup.amount':'최대 50% 할인',
+    'popup.eyebrow':'잠깐 안내드립니다','popup.h3':'Mend는 <em>Glow</em>에서 운영됩니다.',
+    'popup.body':'Glow는 베트남 1위 마사지 예약 플랫폼입니다. 앱을 다운로드하시면 실시간 예약 현황을 확인하고 원하시는 치료사를 예약할 수 있으며, <strong>첫 세션 최대 50% 할인</strong>이 결제 시 자동 적용됩니다.',
+    'popup.perk1':'동일한 검증 치료사',
+    'popup.perk2':'투명한 가격, 깜짝 비용 없음',
+    'popup.perk3':'할인 자동 적용',
+    'popup.cta':'마사지 예약하기','popup.back':'나중에'
   }
 };
 let LANG=(localStorage.getItem('mend-lang')==='ko')?'ko':'en';
@@ -679,121 +658,45 @@ window.addEventListener('scroll',()=>{
   });
 },{passive:true});
 
-// Chatbot
-let uCity='';
-function scrollCW(){const w=document.getElementById('cw');w.scrollTop=w.scrollHeight;}
-
-function botMsg(text,delay=0){
-  return new Promise(res=>{
-    setTimeout(()=>{
-      const t=document.createElement('div');
-      t.className='cb';
-      t.innerHTML=`<div class="av">M</div><div class="typ"><div class="td"></div><div class="td"></div><div class="td"></div></div>`;
-      document.getElementById('cw').appendChild(t);scrollCW();
-      setTimeout(()=>{
-        t.remove();
-        const b=document.createElement('div');
-        b.className='cb';
-        b.innerHTML=`<div class="av">M</div><div class="ct">${text}</div>`;
-        document.getElementById('cw').appendChild(b);scrollCW();res();
-      },1100);
-    },delay);
-  });
-}
-
-function userMsg(text){
-  const b=document.createElement('div');
-  b.className='cb ucb';
-  b.innerHTML=`<div class="ct">${text}</div>`;
-  document.getElementById('cw').appendChild(b);scrollCW();
-}
-
-function addChoices(opts,cb){
-  const d=document.createElement('div');
-  d.className='choices';
-  opts.forEach(o=>{
-    const btn=document.createElement('button');
-    btn.className='ch';btn.textContent=o;
-    btn.onclick=()=>{d.querySelectorAll('button').forEach(b=>{b.disabled=true;b.classList.remove('sel');});btn.classList.add('sel');cb(o,d);};
-    d.appendChild(btn);
-  });
-  document.getElementById('cw').appendChild(d);scrollCW();
-}
-
-function cityName(key){return t('city.'+key);}
-function city(btn,cityKey){
-  uCity=cityKey;
-  document.getElementById('s1').querySelectorAll('button').forEach(b=>{b.disabled=true;b.classList.remove('sel');});
-  btn.classList.add('sel');
-  const cName=cityName(cityKey);
-  userMsg(cName);
-  botMsg(t('chat.cityReply',{city:cName}),350).then(()=>{
-    const timeKeys=['tonight','tomorrow','weekend','exploring'];
-    addChoices(timeKeys.map(k=>t('time.'+k)),(time)=>{
-      userMsg(time);
-      botMsg(t('chat.askType'),350).then(()=>{
-        const typeKeys=['relax','deep','couple','surprise'];
-        addChoices(typeKeys.map(k=>t('type.'+k)),(type)=>{
-          userMsg(type);
-          const typing=document.getElementById('chat-typing');
-          document.getElementById('checking-city').textContent=cName;
-          typing.hidden=false;
-          typing.scrollIntoView({behavior:'smooth',block:'center'});
-          setTimeout(()=>{
-            typing.hidden=true;
-            const r=document.getElementById('res');
-            document.getElementById('resP').textContent=t('result.confirmed',{city:cName});
-            r.classList.add('show');
-            r.scrollIntoView({behavior:'smooth',block:'center'});
-          },1600);
-        });
-      });
-    });
-  });
-}
-
-// ── Glow bridge modal ──
-const bridge=document.getElementById('glow-bridge');
-const bridgeCta=document.getElementById('glow-bridge-cta');
-let bridgePrevFocus=null;
-function bridgeFocusables(){
-  return bridge.querySelectorAll('button,a[href]');
-}
-function showGlowBridge(url){
-  bridgePrevFocus=document.activeElement;
-  bridgeCta.href=url;
-  bridge.hidden=false;
+// ── Glow + Discount Popup ──
+const popup=document.getElementById('glow-popup');
+const popupCta=document.getElementById('glow-popup-cta');
+let popupPrevFocus=null;
+function popupFocusables(){return popup.querySelectorAll('button,a[href]');}
+function openGlowPopup(){
+  popupPrevFocus=document.activeElement;
+  popup.hidden=false;
   document.body.style.overflow='hidden';
-  setTimeout(()=>bridgeCta.focus(),50);
+  setTimeout(()=>popupCta.focus(),60);
 }
-function closeGlowBridge(){
-  bridge.hidden=true;
+function closeGlowPopup(){
+  popup.hidden=true;
   document.body.style.overflow='';
-  if(bridgePrevFocus&&bridgePrevFocus.focus) bridgePrevFocus.focus();
+  if(popupPrevFocus&&popupPrevFocus.focus) popupPrevFocus.focus();
 }
-document.querySelectorAll('a[href*="glowvn.app.link"]').forEach(link=>{
-  link.addEventListener('click',e=>{
-    e.preventDefault();
-    showGlowBridge(link.href);
-  });
+document.getElementById('open-glow-popup').addEventListener('click',openGlowPopup);
+document.querySelectorAll('a[href*="glowvn.app.link"]:not(#glow-popup-cta)').forEach(link=>{
+  link.addEventListener('click',e=>{e.preventDefault();openGlowPopup();});
 });
-document.getElementById('glow-bridge-close').addEventListener('click',closeGlowBridge);
-document.getElementById('glow-bridge-back').addEventListener('click',closeGlowBridge);
-document.getElementById('glow-bridge-backdrop').addEventListener('click',closeGlowBridge);
+const stickyBtn=document.querySelector('.sticky-cta-button');
+if(stickyBtn){
+  stickyBtn.addEventListener('click',e=>{e.preventDefault();openGlowPopup();});
+}
+document.getElementById('glow-popup-close').addEventListener('click',closeGlowPopup);
+document.getElementById('glow-popup-back').addEventListener('click',closeGlowPopup);
+document.getElementById('glow-popup-backdrop').addEventListener('click',closeGlowPopup);
 document.addEventListener('keydown',e=>{
-  if(bridge.hidden) return;
-  if(e.key==='Escape'){closeGlowBridge();return;}
+  if(popup.hidden) return;
+  if(e.key==='Escape'){closeGlowPopup();return;}
   if(e.key==='Tab'){
-    const items=Array.from(bridgeFocusables());
+    const items=Array.from(popupFocusables());
     if(!items.length) return;
     const first=items[0],last=items[items.length-1];
     if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
     else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
   }
 });
-bridgeCta.addEventListener('click',()=>{
-  setTimeout(closeGlowBridge,100);
-});
+popupCta.addEventListener('click',()=>{setTimeout(closeGlowPopup,200);});
 </script>
 </body>
 </html>
