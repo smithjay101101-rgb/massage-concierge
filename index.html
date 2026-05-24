@@ -372,7 +372,7 @@ footer{padding:36px 52px;border-top:1px solid var(--border);display:grid;grid-te
 
     <p class="live-activity">
       <span class="live-dot" aria-hidden="true"></span>
-      <span id="live-activity-text">14 therapists active right now across HCMC, Hanoi &amp; Da Nang</span>
+      <span id="live-activity-text">45 therapists active right now</span>
     </p>
 
     <div class="check-cta-block">
@@ -493,7 +493,7 @@ const I18N={
     'check.sub':'Skip the chat. Skip the search. Tap the button.',
     'check.cta':'Book Massage Now',
     'check.guarantee':"Full refund if your therapist doesn't show. No questions asked.",
-    'live.text':({total,hcmc,hanoi,danang})=>`${total} therapists active right now (${hcmc} in HCMC · ${hanoi} in Hanoi · ${danang} in Da Nang)`,
+    'live.text':({total})=>`${total} therapists active right now`,
     'faq.label':'Common questions','faq.h2':'You probably <em>want to know.</em>',
     'faq.q1':'Is it safe to let someone into my room?',
     'faq.a1':'All therapists are background-checked, identity-verified, and rated after every session.',
@@ -538,7 +538,7 @@ const I18N={
     'check.sub':'채팅도, 검색도 그만. 버튼만 누르세요.',
     'check.cta':'마사지 예약하기',
     'check.guarantee':'치료사가 도착하지 않으면 전액 환불. 조건 없이 보장합니다.',
-    'live.text':({total,hcmc,hanoi,danang})=>`현재 ${total}명의 치료사가 활동 중입니다 (호치민 ${hcmc}명 · 하노이 ${hanoi}명 · 다낭 ${danang}명)`,
+    'live.text':({total})=>`현재 ${total}명의 치료사가 활동 중입니다`,
     'faq.label':'자주 묻는 질문','faq.h2':'궁금하실 만한 <em>몇 가지.</em>',
     'faq.q1':'방에 사람을 들이는 것이 안전한가요?',
     'faq.a1':'모든 치료사는 신원 조회와 본인 확인을 거쳤으며, 매 세션마다 고객 평가를 받습니다.',
@@ -614,12 +614,9 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 const liveCounts=(function setLiveActivity(){
   const KEY='mend-live-count';
   let total=parseInt(sessionStorage.getItem(KEY)||'0',10);
-  if(!total){total=Math.floor(Math.random()*9)+10;sessionStorage.setItem(KEY,String(total));}
-  else if(Math.random()<.25){total=Math.max(10,Math.min(18,total+(Math.random()<.5?-1:1)));sessionStorage.setItem(KEY,String(total));}
-  const hcmc=Math.floor(total*.5);
-  const hanoi=Math.floor(total*.3);
-  const danang=total-hcmc-hanoi;
-  return {total,hcmc,hanoi,danang};
+  if(total<40||total>50){total=Math.floor(Math.random()*11)+40;sessionStorage.setItem(KEY,String(total));}
+  else if(Math.random()<.25){total=Math.max(40,Math.min(50,total+(Math.random()<.5?-1:1)));sessionStorage.setItem(KEY,String(total));}
+  return {total};
 })();
 function renderLiveActivity(){
   const el=document.getElementById('live-activity-text');
