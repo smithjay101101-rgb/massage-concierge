@@ -170,8 +170,6 @@ h2.sh em{font-style:italic;color:var(--gold)}
 .glow-popup-panel{position:relative;background:#FAF6EE;max-width:460px;width:100%;border-radius:10px;box-shadow:0 24px 60px rgba(0,0,0,.25);overflow:hidden;animation:popupSlideUp .3s ease-out}
 @keyframes popupSlideUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
 @media(prefers-reduced-motion:reduce){.glow-popup,.glow-popup-panel{animation:none!important}}
-.glow-popup-close{position:absolute;top:10px;right:10px;width:44px;height:44px;background:rgba(0,0,0,.06);border:none;border-radius:50%;font-size:22px;color:rgba(28,24,20,.55);cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center;line-height:1;font-family:inherit;transition:background .15s ease}
-.glow-popup-close:hover{background:rgba(0,0,0,.12);color:var(--ink)}
 .glow-popup-discount{background:linear-gradient(135deg,var(--gold) 0%,var(--gold-d) 100%);color:var(--white);padding:20px 24px;display:flex;align-items:center;justify-content:center;gap:14px;text-align:center;flex-wrap:wrap}
 .discount-tag{font-size:10px;letter-spacing:.22em;text-transform:uppercase;background:rgba(255,255,255,.22);padding:5px 11px;border-radius:3px;font-weight:600}
 .discount-amount{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;letter-spacing:.01em;font-style:italic}
@@ -447,8 +445,6 @@ footer{padding:36px 52px;border-top:1px solid var(--border);display:grid;grid-te
 <div class="glow-popup" id="glow-popup" role="dialog" aria-modal="true" aria-labelledby="popup-title" hidden>
   <div class="glow-popup-backdrop" id="glow-popup-backdrop"></div>
   <div class="glow-popup-panel">
-    <button class="glow-popup-close" id="glow-popup-close" aria-label="Close popup">×</button>
-
     <div class="glow-popup-discount">
       <span class="discount-tag" data-i18n="popup.tag">FIRST BOOKING</span>
       <span class="discount-amount" data-i18n="popup.amount">Up to 50% off</span>
@@ -675,14 +671,10 @@ function closeGlowPopup(){
   if(popupPrevFocus&&popupPrevFocus.focus) popupPrevFocus.focus();
 }
 document.getElementById('open-glow-popup').addEventListener('click',openGlowPopup);
-document.querySelectorAll('a[href*="glowvn.app.link"]:not(#glow-popup-cta)').forEach(link=>{
+// Every booking CTA (nav, hero, comparison, sticky, footer Glow links) routes through the popup
+document.querySelectorAll('a[href="#check"], a[href*="glowvn.app.link"]:not(#glow-popup-cta)').forEach(link=>{
   link.addEventListener('click',e=>{e.preventDefault();openGlowPopup();});
 });
-const stickyBtn=document.querySelector('.sticky-cta-button');
-if(stickyBtn){
-  stickyBtn.addEventListener('click',e=>{e.preventDefault();openGlowPopup();});
-}
-document.getElementById('glow-popup-close').addEventListener('click',closeGlowPopup);
 document.getElementById('glow-popup-back').addEventListener('click',closeGlowPopup);
 document.getElementById('glow-popup-backdrop').addEventListener('click',closeGlowPopup);
 document.addEventListener('keydown',e=>{
